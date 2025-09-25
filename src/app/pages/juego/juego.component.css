@@ -1,0 +1,104 @@
+.walls {
+  position: relative;
+  width: 700px;
+  height: 80vh;
+  background-color: #e2cf90;
+  border: 3px solid #333;
+
+  /* Centrado vertical de la habitación */
+  display: flex;
+  flex-direction: column; /* los hijos en columna */
+  align-items: center; /* centrado horizontal */
+  justify-content: center; /* centrado vertical */
+
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.room {
+  position: relative;
+  width: 600px;
+  height: 61vh;
+  background: linear-gradient(to bottom, #d9f0ff, #f2f2f2);
+  border: 2px solid #333;
+  /* ya no necesita margin: auto; */
+  overflow: hidden;
+}
+
+/* Objetos */
+.bed {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 60px;
+  z-index: 2; /* por encima del fondo */
+}
+
+.mirror {
+  position: absolute;
+  top: 22px;
+  right: 12px;
+  width: 60px;
+  height: 40px;
+  z-index: 2;
+  transform: rotate(135deg);
+  transform-origin: center;
+}
+
+.window {
+  position: absolute;
+  top: 2px;
+  left: 200px;
+  width: 80px;
+  height: 50px;
+  z-index: 1; /* detrás de otros objetos si quieres */
+}
+
+.door {
+  position: absolute;
+  bottom: 0;
+  right: 250px;
+  width: 60px;
+  height: 80px;
+  z-index: 3; /* por encima del jugador al final */
+}
+
+/* Monitos */
+.player {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: pink; /* Mujer */
+  background-size: cover;
+  z-index: 4;
+}
+
+.npc {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(21, 60, 131); /* Mujer */
+  background-size: cover;
+  z-index: 4;
+}
+
+.player,
+.npc {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.player {
+  transition: top 0.1s linear, left 0.1s linear;
+}
+
+/* Mensaje final */
+.message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: green;
+}

@@ -1,0 +1,17 @@
+img {
+  width: 62%;
+}
+
+.animation {
+  animation: fot 1s ease-out forwards;
+}
+@keyframes fot {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

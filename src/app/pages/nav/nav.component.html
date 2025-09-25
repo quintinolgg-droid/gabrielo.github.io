@@ -1,0 +1,44 @@
+<div class="m-2">
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <!--El routerLinkActive se anida a class para colocar active al momento de ser presionado-->
+      <button
+        class="nav-link active"
+        id="pills-home-tab"
+        [routerLink]="'/'"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-home"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+      >
+        <i class="bi bi-house-fill fs-4"></i>
+      </button>
+    </li>
+    <li
+      class="nav-item"
+      role="presentation"
+      *ngFor="let item of tabs; let i = index"
+    >
+      <button
+        class="nav-link fs-4"
+        [id]="'pills-' + item.name.toLowerCase() + '-tab'"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        data-bs-toggle="pill"
+        [attr.data-bs-target]="item.target"
+        type="button"
+        role="tab"
+        [attr.aria-controls]="item.target.substring(1)"
+        [attr.aria-selected]="i === activeIndex"
+        (click)="activeIndex = i"
+      >
+        {{ item.name }}
+      </button>
+    </li>
+  </ul>
+</div>

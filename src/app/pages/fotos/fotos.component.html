@@ -1,0 +1,71 @@
+<app-nav></app-nav>
+<div class="d-flex animation">
+  <div
+    id="carouselExampleCaptions"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    (slid.bs.carousel)="onSlide($event)"
+  >
+    <div class="carousel-indicators">
+      <button
+        *ngFor="let img of images; let i = index"
+        type="button"
+        [style.background-color]="images[activeIndex].fs"
+        data-bs-target="#carouselExampleCaptions"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="img.slide"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        [class.active]="i === 0"
+        *ngFor="let img of images; let i = index"
+      >
+        <img [src]="img.src" class="d-block mx-auto" [alt]="img.alt" />
+        <div class="carousel-caption d-none d-md-block">
+          <h4 [style.color]="img.fs">{{ img.title }}</h4>
+          <h4 [style.color]="img.fs">{{ img.subtitle }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Carrucel 2-->
+  <div
+    id="carouselExampleCaptions2"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    (slid.bs.carousel)="onSlide2($event)"
+  >
+    <div class="carousel-indicators">
+      <button
+        *ngFor="let img of images2; let i = index"
+        type="button"
+        [style.background-color]="images2[activeIndex2].fs"
+        data-bs-target="#carouselExampleCaptions2"
+        [attr.data-bs-slide-to]="i"
+        [class.active]="i === 0"
+        [attr.aria-current]="i === 0 ? 'true' : null"
+        [attr.aria-label]="img.slide"
+      ></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div
+        class="carousel-item"
+        [class.active]="i === 0"
+        *ngFor="let img of images2; let i = index"
+      >
+        <img [src]="img.src" class="d-block mx-auto" [alt]="img.alt" />
+        <div class="carousel-caption d-none d-md-block">
+          <h4 [style.color]="img.fs">{{ img.title }}</h4>
+          <h4 [style.color]="img.fs">{{ img.subtitle }}</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

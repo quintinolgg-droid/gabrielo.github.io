@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+
+<div class="walls">
+  <!-- Objetos de la habitación que se quedan en los bordes -->
+  <img
+    [src]="
+      openWindows
+        ? 'assets/images/juego/windowopen.PNG'
+        : 'assets/images/juego/window.PNG'
+    "
+    class="window"
+  />
+  <img src="assets/images/juego/door.PNG" class="door" />
+  <div class="npc" [ngStyle]="{ top: npcY + 'px', left: npcX + 'px' }"></div>
+
+  <!-- Habitación centrada -->
+  <div class="room">
+    <img src="assets/images/juego/espejo.PNG" class="mirror" />
+    <img src="assets/images/juego/bed.PNG" class="bed" />
+
+    <!-- Monitos -->
+    <div
+      class="player"
+      [ngStyle]="{ top: playerY + 'px', left: playerX + 'px' }"
+    ></div>
+
+    <!-- Mensaje final -->
+    <div class="message" *ngIf="gameOver">
+      ¡Felicidades amor! <br />
+      SOY TUYO
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card {
+  opacity: 0;
+  animation: slideIn 1.1s ease-out forwards; /* aplica la animación */
+}
+
+img {
+  height: 25vh;
+}
+
+img:hover {
+  height: 40vh;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
